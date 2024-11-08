@@ -352,3 +352,17 @@ local join = workspace.join
 join.Touched:Connect(function(hit)
     print(hit)
 end)
+
+-- Reusable Version
+
+local part = workspace.TouchPart
+local function printHitName(hit)
+print(hit)
+end
+part.Touched:Connect(printHitName)
+
+-- function to test mod.initalize
+-- mod.initialize()  -- This should print "Module initialized!"
+
+local mod = require(game.ServerScriptService.Server.modulescript)
+print("Health", mod.Figter.MaxHealth)
